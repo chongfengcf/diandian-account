@@ -19,7 +19,7 @@
         android:layout_toRightOf="@+id/iv_img"
         android:fontFamily="@font/song"
         android:text="我是标题"
-        android:textColor="#00ff00"
+        android:textColor= "@color/app_color_blue"
         android:textSize="20sp" />
 
     <TextView
@@ -32,6 +32,6 @@
         android:layout_toRightOf="@id/iv_img"
         android:fontFamily="@font/song"
         android:text="我是描述"
-        android:textColor="#00ff00" />
+        android:textColor="@color/app_color_blue" />
 
 </RelativeLayout>

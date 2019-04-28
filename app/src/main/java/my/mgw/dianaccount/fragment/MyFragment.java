@@ -1,7 +1,6 @@
 package my.mgw.dianaccount.fragment;
 
-import android.content.Context;
-import android.net.Uri;
+
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -57,16 +56,26 @@ public class MyFragment extends Fragment {
         mVersionTextView.setText("毛国望小姐姐");
 
         QMUIGroupListView.newSection(getContext())
+                .addItemView(mAboutGroupListView.createItemView("收支情况"), new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        PropertyFragment fragment = new PropertyFragment();
+                        getFragmentManager()
+                                .beginTransaction()
+                                .replace(R.id.content, fragment)
+                                .addToBackStack(null)
+                                .commit();
+                    }
+                })
                 .addItemView(mAboutGroupListView.createItemView("账单统计"), new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
-                    }
-                })
-                .addItemView(mAboutGroupListView.createItemView("个人资料"), new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
+                        CategoryFragment fragment = new CategoryFragment();
+                        getFragmentManager()
+                                .beginTransaction()
+                                .replace(R.id.content, fragment)
+                                .addToBackStack(null)
+                                .commit();
                     }
                 })
                 .addTo(mAboutGroupListView);

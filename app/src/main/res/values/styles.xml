@@ -188,4 +188,14 @@
         <item name="qmui_dialog_menu_container_padding_bottom_when_action_exist">24dp</item>
     </style>
 
+    <style name="QDRadiusButton" parent="@style/Button">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:paddingLeft">?attr/qmui_content_spacing_horizontal</item>
+        <item name="android:paddingRight">?attr/qmui_content_spacing_horizontal</item>
+        <item name="android:background">@drawable/s_radius_button_bg</item>
+        <item name="android:textColor">@color/s_app_color_blue_2</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center</item>
+    </style>
 </resources>

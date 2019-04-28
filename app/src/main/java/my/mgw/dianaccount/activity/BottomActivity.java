@@ -19,10 +19,10 @@ import my.mgw.dianaccount.fragment.MyFragment;
 
 public class BottomActivity extends AppCompatActivity {
 
-    private TextView mTextMessage;
 
     private FragmentTransaction transaction;
     private FragmentManager fragmentManager;
+    private BottomNavigationView navigation;
 
     // 设置默认进来是tab 显示的页面
     private void setDefaultFragment() {
@@ -64,10 +64,13 @@ public class BottomActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bottom);
         setDefaultFragment();
-        mTextMessage = (TextView) findViewById(R.id.message);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         QMUIStatusBarHelper.translucent(this);
+    }
+
+    public void goHome() {
+        navigation.setSelectedItemId(R.id.navigation_home);
     }
 
 }

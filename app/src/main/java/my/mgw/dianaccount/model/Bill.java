@@ -2,13 +2,12 @@ package my.mgw.dianaccount.model;
 
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Id;
-
-import java.util.Date;
 import org.greenrobot.greendao.annotation.Generated;
+
 
 //账单
 @Entity
-public class Bill {
+public class Bill{
 
     @Id(autoincrement = true)
     private Long id;
@@ -22,14 +21,14 @@ public class Bill {
     //金额
     private double money;
 
-    //日期
-    private Date date;
+    //时间
+    private String date;
 
     //备注
     private String text;
 
-    @Generated(hash = 888993856)
-    public Bill(Long id, String category, boolean pay, double money, Date date,
+    @Generated(hash = 24139183)
+    public Bill(Long id, String category, boolean pay, double money, String date,
             String text) {
         this.id = id;
         this.category = category;
@@ -75,11 +74,11 @@ public class Bill {
         this.money = money;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return this.date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

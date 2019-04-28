@@ -18,8 +18,16 @@ public class BillAdapter extends BaseQuickAdapter<Bill, BaseViewHolder> {
 
     @Override
     protected void convert(BaseViewHolder helper, Bill item) {
-        helper.setText(R.id.tv_title, item.getCategory())
-                .setText(R.id.tv_content, String.valueOf(item.getMoney()))
-                .setImageResource(R.id.iv_img, R.drawable.add);
+        helper.setText(R.id.name, item.getCategory())
+                .setText(R.id.content, item.getText())
+                .setText(R.id.date, item.getDate());
+
+        if(item.getPay()) {
+            helper.setText(R.id.rmb, "- " + item.getMoney());
+        } else {
+            helper.setText(R.id.rmb, "+ " + item.getMoney());
+        }
     }
+
+
 }
