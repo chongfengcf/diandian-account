@@ -95,7 +95,12 @@ public class PropertyFragment extends Fragment {
         });
 
         mCircleProgressBar.setMaxValue(intcost + intincome);
-        mCircleProgressBar.setProgress(intcost);
+        try {
+            mCircleProgressBar.setProgress(intcost);
+        } catch (ArithmeticException e) {
+            mCircleProgressBar.setMaxValue(2);
+            mCircleProgressBar.setProgress(1);
+        }
 
         mtopBtn.setOnClickListener(new View.OnClickListener() {
             @Override
