@@ -67,17 +67,11 @@ public class PropertyFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
         mdaoSession = ((DbConn) getActivity().getApplication()).getDaoSession();
-
         setTime();
-
         computing();
-
         int intcost = (int) (cost * 100);
         int intincome = (int) (income * 100);
-
-
         mTopBar.addLeftBackImageButton().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -124,8 +118,6 @@ public class PropertyFragment extends Fragment {
                 .where(new WhereCondition.StringCondition("strftime('%Y-%m',date)='" + year + "-" + month + "'"))
                 .build()
                 .list();
-
-
 
         cost = 0;
         income = 0;
